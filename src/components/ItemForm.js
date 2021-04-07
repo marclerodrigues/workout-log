@@ -23,9 +23,9 @@ const ItemForm = ({ onAdd }) => {
     const data = new FormData(formRef.current);
     const item = Object.fromEntries(data);
 
-    onAdd(item)
+    onAdd(item);
 
-    formRef.current.reset()
+    formRef.current.reset();
   };
 
   return (
@@ -43,7 +43,12 @@ const ItemForm = ({ onAdd }) => {
               />
             </Col>
             <Col>
-              <Form.Control as="select" name="activity" defaultValue="" required>
+              <Form.Control
+                as="select"
+                name="activity"
+                defaultValue=""
+                required
+              >
                 <option value="">Choose an Activity</option>
                 <option value="Run">Run</option>
                 <option value="Swimming">Swimming</option>

@@ -21,7 +21,7 @@ const updateLocalStorage = (items, hours) => {
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_STATE": {
-      return { ...state, ...action.state};
+      return { ...state, ...action.state };
     }
     case "ADD": {
       const { items, totalHours } = { ...state };
@@ -67,7 +67,6 @@ const initialState = { items: [], totalHours: 0 };
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-
   useEffect(() => {
     let existingState = {};
 
@@ -85,7 +84,6 @@ const App = () => {
 
     dispatch({ type: "SET_STATE", state: existingState });
   }, []);
-
 
   return (
     <AppContainer>
